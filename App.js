@@ -8,35 +8,64 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
-} from 'react-native';
+  View,
+  Image,
+  TextInput,
+  Button,
+ } from 'react-native';
 
 export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome To My App
-        </Text>
-      </View>
-    );
-  }
-}
+       constructor(props) {
+           super(props);
+           this.state = {text: ''};
+       }
+      render() {
+        return (
+          <View style={styles.container}>
+            <Image style={styles.image} source={require('./img/logo.png')} />
+
+            <TextInput style={styles.TextInput}
+              placeholder="Email id"
+              placeholderTextColor="white"
+              underlineColorAndroid="#fff"
+              onChangeText={(text) => this.setState({text})}
+            />
+
+            <TextInput style={styles.TextInput}
+              placeholder="Password"
+              placeholderTextColor="#fff"
+              underlineColorAndroid="#fff"
+              onChangeText={(text) => this.setState({text})}
+            />
+
+          </View>
+        );
+      }
+    }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'black',
-  },
-  welcome: {
-    fontSize: 35,
-    textAlign: 'center',
-    margin: 10,
-    color: 'red',
-    borderRadius: 4,
-    borderWidth: 2,
-    padding: 8,
-    borderColor: 'blue',
-  },
+      container: {
+        flex: 1,
+        backgroundColor: '#000',
+      },
+      image: {
+        marginLeft: 115,
+        marginTop: 20,
+        width: 150,
+        height: 200,
+      },
+      logoText: {
+        textAlign:'center',
+        fontSize: 25,
+        color: '#3bc4f2',
+      },
+
+      TextInput : {
+        marginTop: 30,
+        marginLeft: 30,
+        marginRight: 30,
+        fontSize: 16,
+        color: '#fff',
+      },
+
   });
