@@ -10,8 +10,7 @@ import {
   Text,
   View,
   Image,
-  TextInput,
-  Button,
+  TextInput
  } from 'react-native';
 
 export default class App extends Component<{}> {
@@ -37,7 +36,12 @@ export default class App extends Component<{}> {
               underlineColorAndroid="#fff"
               onChangeText={(text) => this.setState({text})}
             />
-
+              <Text style={styles.Text_Button}>
+                login
+              </Text>
+              <Text style={styles.Text_Button}>
+                forget Password
+              </Text>
           </View>
         );
       }
@@ -67,5 +71,28 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#fff',
       },
-
+      Button: {
+        width:200,
+        marginLeft:100,
+        fontSize: 25,
+        color: 'green',
+        padding:10, 
+        height:60,
+        borderRadius:4,
+        backgroundColor: 'white',
+        marginTop:30,
+        textAlign:'center',   
+      },
+      Text_Button: {
+        width:300,
+        marginLeft:50,
+        fontSize: 25,
+        color: 'green',
+        padding:10, 
+        height:60,
+        borderRadius:4,
+        backgroundColor: 'white',
+        marginTop:30,
+        textAlign:'center', 
+      },
   });
